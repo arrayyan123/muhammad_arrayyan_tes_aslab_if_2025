@@ -24,7 +24,7 @@ function WebsiteLayout({children}) {
     useEffect(() => {
         const handleResizeAndScroll = () => {
             if (window.innerWidth < 1024) {
-                setNavbarBackground('bg-white');
+                setNavbarBackground('bg-[#292929]');
                 setNavbarText('text-white');
             } else {
                 if (window.scrollY > 50) {
@@ -116,7 +116,7 @@ function WebsiteLayout({children}) {
                 </div>
 
                 {/* footer */}
-                <footer class="bg-[#292929]">
+                <footer class="xd">
                     <div className="w-full p-5">
                         <span className="flex flex-row items-center gap-3">
                             <IonIcon className="text-2xl" name="mail" />
@@ -128,24 +128,24 @@ function WebsiteLayout({children}) {
                         <form onSubmit={'/'}>
                             <div className="flex md:flex-row flex-col items-center gap-4 max-w-2xl">
                                 <div className=" w-full">
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-200">
                                         Name
                                     </label>
                                     <input
                                         type="text"
                                         id="name"
-                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                                        className="mt-1 block w-full border-gray-300 bg-[#292929] rounded-md shadow-sm"
                                         required
                                     />
                                 </div>
                                 <div className=" w-full">
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-200">
                                         Email
                                     </label>
                                     <input
                                         type="email"
                                         id="email"
-                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                                        className="mt-1 block w-full border-gray-300 bg-[#292929] rounded-md shadow-sm"
                                         required
                                     />
                                 </div>
@@ -169,7 +169,7 @@ function WebsiteLayout({children}) {
                             </div>
                             <div className='flex flex-col w-1/2'>
                                 <h1 className="mt-6 text-white text-[20px] max-w-md black leading-relaxed font-bold">
-                                    RayyanTech
+                                    Rayyan Digital
                                 </h1>
                                 <p className='text-white'>
                                     Inovasi Tanpa Batas, Masa Depan di Tangan Anda.

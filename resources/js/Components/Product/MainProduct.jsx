@@ -208,7 +208,7 @@ function MainProduct({ isProductSelected, selectedProduct, onProductSelect, onPr
                           </div>
                         </a>
                         <div className="flex flex-col flex-1 p-6">
-                          <div className="relative text-black hover:font-bold cursor-pointer transition-all ease-in-out mb-2">
+                          <div className="relative text-white hover:font-bold cursor-pointer transition-all ease-in-out mb-2">
                             <span className="text-xl font-bold leading-tight">
                               {item.title}
                             </span>
@@ -240,7 +240,7 @@ function MainProduct({ isProductSelected, selectedProduct, onProductSelect, onPr
             </>
           )}
 
-          {/* Tampilan Blog yang Dipilih */}
+          {/* Tampilan Product yang Dipilih */}
           {isProductSelected && selectedProduct && (
             <div className="lg:p-6 p-4 bg-white shadow-md dark:bg-gray-800 rounded-lg">
               {/* Tombol kembali */}

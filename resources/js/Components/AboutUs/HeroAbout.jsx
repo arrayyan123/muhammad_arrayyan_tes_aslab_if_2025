@@ -1,12 +1,25 @@
 import React from 'react'
 
+const svgImages = import.meta.glob('/public/assets/images/*.svg', { eager: true });
+const pngImages = import.meta.glob('/public/assets/images/*.png', { eager: true });
+const jpgImages = import.meta.glob('/public/assets/images/*.jpg', { eager: true });
+
+const images = { ...svgImages, ...pngImages, ...jpgImages };
+
+const getImageByName = (name) => {
+    const matchingImage = Object.keys(images).find((path) => path.includes(`${name}`));
+    return matchingImage ? images[matchingImage].default || images[matchingImage] : null;
+};
+
+const pattern = getImageByName('about_img');
+
 function HeroAbout() {
     return (
         <div>
             <div class="sm:flex items-center relative z-40 mx-auto max-w-screen-xl">
                 <div class="sm:w-1/2 p-10">
                     <div class="image object-center text-center">
-                        <img src="https://i.imgur.com/WbQnbas.png" />
+                        <img src={pattern} />
                     </div>
                 </div>
                 <div class="sm:w-1/2 p-5">

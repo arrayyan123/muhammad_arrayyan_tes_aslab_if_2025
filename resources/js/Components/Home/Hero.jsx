@@ -1,6 +1,19 @@
 import IonIcon from '@reacticons/ionicons';
 import React from 'react';
 
+const svgImages = import.meta.glob('/public/assets/images/*.svg', { eager: true });
+const pngImages = import.meta.glob('/public/assets/images/*.png', { eager: true });
+const jpgImages = import.meta.glob('/public/assets/images/*.jpg', { eager: true });
+
+const images = { ...svgImages, ...pngImages, ...jpgImages };
+
+const getImageByName = (name) => {
+    const matchingImage = Object.keys(images).find((path) => path.includes(`${name}`));
+    return matchingImage ? images[matchingImage].default || images[matchingImage] : null;
+};
+
+const pattern = getImageByName('home_img');
+
 function Hero() {
     return (
         <div>
@@ -35,7 +48,7 @@ function Hero() {
                     </div>
                     <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
                         <img
-                            src="https://demo.themesberg.com/landwind/images/hero.png"
+                            src={pattern}
                             alt="Hero"
                         />
                     </div>
