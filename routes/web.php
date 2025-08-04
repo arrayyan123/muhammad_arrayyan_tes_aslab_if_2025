@@ -3,16 +3,24 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+//page controller
+Route::get('/', [PagesController::class, 'home'])->name('home.page');
+Route::get('/blog', [PagesController::class, 'blog'])->name('blog.page');
+Route::get('/product', [PagesController::class, 'product'])->name('product.page');
+Route::get('/contact', [PagesController::class, 'contact'])->name('contact.page');
+Route::get('/aboutus', [PagesController::class, 'about'])->name('about.page');
+
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
